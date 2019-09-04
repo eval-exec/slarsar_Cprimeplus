@@ -1,6 +1,10 @@
 #include <stdio.h>
+#include "stdlib.h"
 
-int main() {
-    printf("Hello, World!\n");
-    return 0;
+int main(int argc, char **argv) {
+    while (*++argv != NULL) {
+        printf("%s\n",*argv);
+    }
+    return EXIT_SUCCESS;
 }
+
