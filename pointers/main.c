@@ -2,7 +2,6 @@
 #include "stdlib.h"
 
 int main(int argc, char **argv) {
-    printf("argv[0] is %s\n",*argv);
     while (*++argv != NULL) {
         printf("%s\n",*argv);
     }
