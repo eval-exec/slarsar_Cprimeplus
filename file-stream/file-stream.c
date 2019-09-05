@@ -8,6 +8,8 @@ int main(){
 	file1 = fopen("data","r");
 	if (file1 == NULL) {
 		perror("data");
+		fclose(file1);
+		perror("close");
 		return EXIT_FAILURE;
 	}
 	return 0;
