@@ -17,7 +17,6 @@ typedef struct {
 
 int main(){
 	A ff;
-	ff.
 	
 
 	printf("a1");
