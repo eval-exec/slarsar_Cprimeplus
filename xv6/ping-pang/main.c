@@ -25,18 +25,13 @@ void main() {
         for (;;) {
 
             if (start == 0) {
-                printf("start is 0\n");
                 if (write(pipes_ctop[1], ball, 1) < 0 ) {
                     perror("child write error :");
                 }
-                printf("child process write %s\n", ball);
                 start = 1;
-                printf("child continue\n");
                 continue;
             }
-            printf("start is %d\n",start);
 
-            printf("child read now");
             if (read(pipes_ptoc[0], child_buf, 1) < 0 ) {
                 printf("error read in child \n ");
                 break;
@@ -55,7 +50,7 @@ void main() {
             }
             printf("parent process get %s\n", parent_buf);
 
-            write(pipes_ptoc[1], child_buf, 1);
+            write(pipes_ptoc[1], parent_buf , 1);
             printf("parent process write %s\n", ball);
 
         }
